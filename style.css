@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --ink: #16221f;
   --muted: #64736f;
   --paper: #f8faf7;
@@ -482,5 +482,244 @@ h1 {
     align-items: flex-start;
     flex-direction: column;
     width: min(100% - 24px, 1160px);
+  }
+}
+
+/* Motion layer */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --motion-fast: 180ms;
+    --motion-med: 420ms;
+    --motion-slow: 760ms;
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
+    --ease-spring: cubic-bezier(.2, .9, .22, 1.18);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at var(--glow-x, 18%) var(--glow-y, 12%), rgba(228, 111, 82, .13), transparent 18rem),
+      radial-gradient(circle at calc(100% - var(--glow-x, 18%)) 22%, rgba(19, 111, 99, .11), transparent 22rem);
+    opacity: .9;
+    transition: background-position var(--motion-slow) ease;
+  }
+
+  .site-header {
+    animation: headerDrop .72s var(--ease-out) both;
+    transition: box-shadow var(--motion-med) ease, background-color var(--motion-med) ease, transform var(--motion-med) ease;
+  }
+
+  .site-header.is-scrolled {
+    background: rgba(255, 255, 255, .82);
+    box-shadow: 0 14px 40px rgba(22, 34, 31, .11);
+    backdrop-filter: blur(16px);
+  }
+
+  .brand-mark {
+    transition: transform var(--motion-med) var(--ease-spring), box-shadow var(--motion-med) ease;
+  }
+
+  .brand:hover .brand-mark {
+    transform: rotate(-6deg) scale(1.06);
+    box-shadow: 0 12px 28px rgba(19, 111, 99, .22);
+  }
+
+  .nav a {
+    position: relative;
+    transition: color var(--motion-fast) ease, transform var(--motion-fast) ease;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -.35rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--motion-med) var(--ease-out);
+  }
+
+  .nav a:hover {
+    transform: translateY(-1px);
+  }
+
+  .nav a:hover::after,
+  .nav a.is-active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hero-copy > *,
+  .profile-panel {
+    animation: riseFade .86s var(--ease-out) both;
+  }
+
+  .hero-copy > *:nth-child(1) { animation-delay: .08s; }
+  .hero-copy > *:nth-child(2) { animation-delay: .16s; }
+  .hero-copy > *:nth-child(3) { animation-delay: .24s; }
+  .hero-copy > *:nth-child(4) { animation-delay: .32s; }
+  .profile-panel { animation-delay: .2s; }
+
+  .profile-card,
+  .project-card,
+  .skill-card,
+  .education-card,
+  .contact-card,
+  .stat-card {
+    transition: transform var(--motion-med) var(--ease-out), box-shadow var(--motion-med) ease, border-color var(--motion-med) ease;
+    will-change: transform;
+  }
+
+  .profile-card:hover,
+  .project-card:hover,
+  .skill-card:hover,
+  .education-card:hover,
+  .contact-card:hover,
+  .stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 75px rgba(22, 34, 31, .16);
+    border-color: rgba(19, 111, 99, .28);
+  }
+
+  .button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform var(--motion-fast) ease, box-shadow var(--motion-fast) ease, background-color var(--motion-fast) ease;
+  }
+
+  .button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .38), transparent);
+    transform: translateX(-120%);
+    transition: transform 620ms var(--ease-out);
+  }
+
+  .button:hover {
+    transform: translateY(-3px);
+  }
+
+  .button:hover::before {
+    transform: translateX(120%);
+  }
+
+  .avatar {
+    animation: avatarFloat 4.8s ease-in-out infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px) scale(.985);
+    transition: opacity var(--motion-slow) var(--ease-out), transform var(--motion-slow) var(--ease-out);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .project-card.reveal,
+  .skill-card.reveal,
+  .education-card.reveal,
+  .stat-card.reveal {
+    transition-delay: calc(var(--stagger, 0) * 75ms);
+  }
+
+  .project-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(220, 166, 58, .16), transparent 42%, rgba(19, 111, 99, .12));
+    opacity: 0;
+    transition: opacity var(--motion-med) ease;
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  .tag,
+  .skill-list li,
+  .tool-pill {
+    transition: transform var(--motion-fast) ease, background-color var(--motion-fast) ease, color var(--motion-fast) ease;
+  }
+
+  .tag:hover,
+  .skill-list li:hover,
+  .tool-pill:hover {
+    transform: translateY(-2px);
+  }
+
+  @keyframes headerDrop {
+    from { opacity: 0; transform: translateY(-18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes riseFade {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes avatarFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Mobile animation/layout polish */
+@media (max-width: 640px) {
+  .site-header {
+    align-items: stretch;
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    gap: .35rem;
+    overflow: visible;
+  }
+
+  .nav a {
+    min-width: 0;
+    padding-inline: .25rem;
+    text-align: center;
+    font-size: clamp(.72rem, 3.1vw, .88rem);
+    white-space: nowrap;
+  }
+
+  .nav a::after {
+    bottom: -.18rem;
+  }
+
+  .hero-copy > *,
+  .profile-panel {
+    animation-duration: .68s;
   }
 }
