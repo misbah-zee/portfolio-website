@@ -3,112 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Misbah Z., a backend‑focused developer with sleek animations.">
-  <title>Misbah Z. – Portfolio</title>
+  <meta name="description" content="Portfolio of Misbah Ullah, a backend-focused Software Engineer.">
+  <title>Misbah Ullah – Software Engineer</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  
+  <!-- Lenis for smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- SplitType for crazy text reveals -->
+  <script src="https://unpkg.com/split-type"></script>
 </head>
 <body>
-  <header class="site-header" data-aos="fade-down">
-    <h1>Misbah Z.</h1>
+
+  <!-- Custom Cursor -->
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-counter">0%</div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <a href="#home" class="brand" data-cursor="hover">Misbah U.</a>
     <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#cv">CV</a>
+      <a href="#home" data-cursor="hover">Home</a>
+      <a href="#about" data-cursor="hover">About</a>
+      <a href="#projects" data-cursor="hover">Projects</a>
+      <a href="#cv" data-cursor="hover">Experience</a>
     </nav>
   </header>
 
-  <section class="section" id="home" data-aos="fade-up">
-    <h2 class="section-heading">Software Engineer &amp; Data Scientist</h2>
-    <p>Building intelligent solutions with clean code and data‑driven insights.</p>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero" id="home">
+      <div class="hero-inner">
+        <p class="eyebrow" data-aos="fade-up">Software Engineer</p>
+        <h1 class="split-text">Crafting backend systems with precision & power.</h1>
+        <div class="hero-actions">
+          <a href="#projects" class="button primary" data-cursor="hover">View Work</a>
+          <a href="#cv" class="button secondary" data-cursor="hover">Read CV</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="section" id="about" data-aos="fade-up">
-    <h2 class="section-heading">About Me</h2>
-    <p>Passionate about creating impactful software and leveraging data to solve real‑world problems.</p>
-  </section>
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="split-layout">
+        <div>
+          <h2 class="section-title split-text">About Me</h2>
+        </div>
+        <div class="about-content">
+          <p class="stagger-text">
+            A Backend-Focused Software Engineer with dedication and hardworking qualities in computer science. 
+            Proven proficiency in designing, implementing, testing, and maintaining software solutions within project timelines.
+          </p>
+          <p class="stagger-text">
+            Demonstrates mastery in programming languages including Python and SQL. Skilled in working on the Python framework FastAPI with knowledge of AWS cloud, RESTful API Design, and Implementation. Eager to improve technical skills, work on real-world projects, and continuously learn Machine Learning while contributing to organizational growth.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section class="section" id="projects" data-aos="fade-up">
-    <h2 class="section-heading">Featured Projects</h2>
-    <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Project Alpha</h3>
-        <p>A brief description of a machine‑learning project.</p>
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+      <h2 class="section-title split-text" style="text-align: center; margin-bottom: 4rem;">Selected Works</h2>
+      
+      <div class="project-list">
+        
+        <article class="project-item">
+          <div class="project-info">
+            <p class="project-meta">01 // First Real-World Project</p>
+            <h3 class="project-title">URL Shortening Service</h3>
+          </div>
+          <div class="project-visual">
+            <div class="visual-placeholder"></div>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-info">
+            <p class="project-meta">02 // Automation & Tooling</p>
+            <h3 class="project-title">Automated File Manager CLI</h3>
+          </div>
+          <div class="project-visual">
+            <div class="visual-placeholder"></div>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-info">
+            <p class="project-meta">03 // Asynchronous Processing</p>
+            <h3 class="project-title">Background Job Queue / Notification System</h3>
+          </div>
+          <div class="project-visual">
+            <div class="visual-placeholder"></div>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <div class="project-info">
+            <p class="project-meta">04 // E-commerce Prototype</p>
+            <h3 class="project-title">Real-Time Price Tracker</h3>
+          </div>
+          <div class="project-visual">
+            <div class="visual-placeholder"></div>
+          </div>
+        </article>
+        
+        <article class="project-item">
+          <div class="project-info">
+            <p class="project-meta">05 // RESTful API</p>
+            <h3 class="project-title">Task Tracker App</h3>
+          </div>
+          <div class="project-visual">
+            <div class="visual-placeholder"></div>
+          </div>
+        </article>
+
       </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-        <h3>Project Beta</h3>
-        <p>A brief description of a web‑development project.</p>
+    </section>
+
+    <!-- CV/Experience Section -->
+    <section class="section cv-section" id="cv">
+      <div class="split-layout">
+        <div>
+          <h2 class="section-title split-text">Education & Skills</h2>
+        </div>
+        
+        <div class="cv-details">
+          
+          <div class="cv-block">
+            <h3>Education</h3>
+            <div class="timeline-item">
+              <h4>Bachelor of Technology, Computer Science and Engineering</h4>
+              <p class="timeline-meta">AKTU Lucknow // 2023–2026</p>
+              <p>Made a final year project in Quadtree Visualizer. Helped several times by maintaining college data and security on college website backend.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Diploma, Civil Engineering</h4>
+              <p class="timeline-meta">UPBTE // 2020–2023</p>
+              <p>Three consecutive years studying construction.</p>
+            </div>
+          </div>
+
+          <div class="cv-block mt-4">
+            <h3>Skills & Expertise</h3>
+            <div class="skills-grid">
+              <span>Logical thinking</span>
+              <span>Software debugging</span>
+              <span>Computer programming</span>
+              <span>Problem Solving</span>
+              <span>Conflict resolution</span>
+              <span>Communication</span>
+              <span>Fast Learner</span>
+              <span>Team Work</span>
+              <span>Work under pressure</span>
+            </div>
+          </div>
+
+          <div class="cv-block mt-4">
+            <h3>Languages</h3>
+            <div class="skills-grid">
+              <span>English (Fluent)</span>
+              <span>Hindi (Native)</span>
+              <span>French (Learning)</span>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
-        <h3>Project Gamma</h3>
-        <p>A brief description of a data‑visualisation project.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h2 class="footer-title split-text">Let's Talk.</h2>
+      <div class="contact-info">
+        <a href="mailto:misbahwork2786@gmail.com" class="footer-link" data-cursor="hover">misbahwork2786@gmail.com</a>
+        <a href="tel:+917078391446" class="footer-link" data-cursor="hover">+91 7078391446</a>
+        <p>Okhla, New Delhi</p>
       </div>
+      <p class="copyright">© 2026 Misbah Ullah.</p>
     </div>
-  </section>
-
-  <section class="section" id="cv" data-aos="fade-up">
-  <h2 class="section-heading reveal">Curriculum Vitae</h2>
-  <div class="cv-content">
-    <h3 class="reveal">Personal Profile</h3>
-    <p class="reveal">A new Software Engineer with dedication and hardworking qualities in computer science. Proven proficiency in designing, implementing, testing, and maintaining software solutions within project timelines. Demonstrates mastery in programming languages including Python and SQL. Skilled in working on Python framework FastAPI with knowledge of AWS cloud. RESTful API Design and Implementation.</p>
-    <h3 class="reveal">Contact Details</h3>
-    <ul class="reveal">
-      <li>Phone: +917078391446</li>
-      <li>Email: misbahwork2786@gmail.com</li>
-      <li>Location: Okhla, New Delhi</li>
-    </ul>
-    <h3 class="reveal">Skills & Expertise</h3>
-    <ul class="reveal">
-      <li>Logical thinking</li>
-      <li>Software debugging</li>
-      <li>Computer programming</li>
-      <li>Problem Solving</li>
-      <li>Conflict resolution</li>
-      <li>Oral and written communication</li>
-      <li>Fast Learner</li>
-      <li>Hardworking</li>
-      <li>Team Work</li>
-      <li>Work under pressure</li>
-    </ul>
-    <h3 class="reveal">Languages</h3>
-    <ul class="reveal">
-      <li>English (Fluent)</li>
-      <li>Hindi (Native Language)</li>
-      <li>French (Learning)</li>
-    </ul>
-    <h3 class="reveal">Education</h3>
-    <ul class="reveal">
-      <li>Bachelor of Technology, Computer Science and Engineering, AKTU Lucknow (2023‑2026). Final year project: Quadtree Visualizer. Contributed to college data and security backend.</li>
-      <li>Diploma, Civil Engineering, UPBTE (2020‑2023). Three consecutive construction projects.</li>
-    </ul>
-    <h3 class="reveal">Projects</h3>
-    <ul class="reveal">
-      <li>URL Shortening Service – first real‑world project.</li>
-      <li>Automated file manager CLI – automation and tooling.</li>
-      <li>Background job queue / Notification System – asynchronous task processing.</li>
-      <li>Real‑Time price tracker – e‑commerce prototype.</li>
-      <li>Task tracker – RESTful API for to‑do list.</li>
-    </ul>
-    <h3 class="reveal">Career Objectives</h3>
-    <p class="reveal">Python developer with interest in backend development and problem‑solving, seeking an opportunity to start my career in software development. Eager to improve technical skills, work on real‑world projects, and continuously learn Machine Learning and modern technologies while contributing to organizational growth.</p>
-    <h3 class="reveal">Hobbies</h3>
-    <ul class="reveal">
-      <li>Reading</li>
-      <li>Sprint</li>
-      <li>Playing basketball</li>
-    </ul>
-  </div>
-</section>
-
-  <footer class="footer" data-aos="fade-up">
-    <p>© 2026 Misbah Z.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
