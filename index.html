@@ -1,254 +1,65 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Misbah Ullah, a backend-focused Python developer building APIs, automation tools, and reliable software systems.">
-  <title>Misbah Ullah | Backend Python Developer</title>
+  <meta name="description" content="Portfolio of Misbah Z., a backend‑focused developer with sleek animations.">
+  <title>Misbah Z. – Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Misbah Ullah home">
-      <span class="brand-mark">MU</span>
-      <span>Misbah Ullah</span>
-    </a>
-    <nav class="nav" aria-label="Primary navigation">
+  <header class="header" data-aos="fade-down">
+    <h1>Misbah Z.</h1>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+      <a href="#cv">CV</a>
     </nav>
   </header>
 
-  <main id="home">
-    <section class="hero section">
-      <div class="hero-copy">
-        <p class="eyebrow">Backend Python Developer</p>
-        <h1>Building practical backend systems, APIs, and automation tools.</h1>
-        <p class="hero-text">
-          I am a Computer Science Engineering student focused on Python, FastAPI,
-          SQL, REST API design, and cloud fundamentals. I enjoy turning real
-          problems into clean, testable software.
-        </p>
-        <div class="hero-actions" aria-label="Portfolio actions">
-          <a class="button primary" href="Misbah11.pdf" target="_blank" rel="noopener">View Resume</a>
-          <a class="button secondary" href="mailto:misbahwork2786@gmail.com">Email Me</a>
-        </div>
+  <section class="hero" id="home" data-aos="fade-up">
+    <h2>Software Engineer &amp; Data Scientist</h2>
+    <p>Building intelligent solutions with clean code and data‑driven insights.</p>
+  </section>
+
+  <div class="content-section" id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Passionate about creating impactful software and leveraging data to solve real‑world problems.</p>
+  </div>
+
+  <div class="content-section" id="projects" data-aos="fade-up">
+    <h2>Featured Projects</h2>
+    <div class="cards" data-aos="fade-up" data-aos-delay="100">
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Project Alpha</h3>
+        <p>A brief description of a machine‑learning project.</p>
       </div>
-
-      <aside class="profile-panel" aria-label="Misbah Ullah profile summary">
-        <div class="profile-card">
-          <div class="avatar" aria-hidden="true">MU</div>
-          <div>
-            <h2>Misbah Ullah</h2>
-            <p>Software Engineer</p>
-          </div>
-        </div>
-        <div class="metric-grid">
-          <div>
-            <strong>5+</strong>
-            <span>Portfolio Projects</span>
-          </div>
-          <div>
-            <strong>2026</strong>
-            <span>B.Tech Track</span>
-          </div>
-          <div>
-            <strong>API</strong>
-            <span>Backend Focus</span>
-          </div>
-          <div>
-            <strong>SQL</strong>
-            <span>Data Skills</span>
-          </div>
-        </div>
-        <div class="code-preview" aria-label="Backend developer focus">
-          <span>const focus = {</span>
-          <span>&nbsp;&nbsp;language: "Python",</span>
-          <span>&nbsp;&nbsp;framework: "FastAPI",</span>
-          <span>&nbsp;&nbsp;goal: "Reliable systems"</span>
-          <span>};</span>
-        </div>
-      </aside>
-    </section>
-
-    <section class="section intro-band" aria-label="Professional snapshot">
-      <div>
-        <p class="section-kicker">Profile</p>
-        <h2>Career-ready, curious, and focused on dependable software.</h2>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Project Beta</h3>
+        <p>A brief description of a web‑development project.</p>
       </div>
-      <p>
-        I am looking for an opportunity to start my career in software
-        development, contribute to real-world products, and keep improving in
-        backend engineering, machine learning, and modern cloud technologies.
-      </p>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-heading">
-        <p class="section-kicker">Selected Work</p>
-        <h2>Projects that show backend thinking and problem solving.</h2>
+      <div class="card" data-aos="zoom-in" data-aos-delay="400">
+        <h3>Project Gamma</h3>
+        <p>A brief description of a data‑visualisation project.</p>
       </div>
-      <div class="project-grid">
-        <article class="project-card featured">
-          <div class="project-topline">
-            <span>Real-world build</span>
-            <span>Backend</span>
-          </div>
-          <h3>URL Shortening Service</h3>
-          <p>
-            Designed a service concept for generating compact links, redirecting
-            requests, and managing URL records with a backend-first structure.
-          </p>
-          <ul>
-            <li>API route planning</li>
-            <li>Database-backed link records</li>
-            <li>Validation and redirect flow</li>
-          </ul>
-        </article>
+    </div>
+  </div>
 
-        <article class="project-card">
-          <div class="project-topline">
-            <span>CLI</span>
-            <span>Automation</span>
-          </div>
-          <h3>Automated File Manager</h3>
-          <p>
-            Built a command-line automation tool idea for sorting, organizing,
-            and managing local files with repeatable rules.
-          </p>
-        </article>
+  <div class="content-section" id="cv" data-aos="fade-up">
+    <h2>Curriculum Vitae</h2>
+    <a class="cv-link" href="Misbah11.pdf" download>Download CV</a>
+  </div>
 
-        <article class="project-card">
-          <div class="project-topline">
-            <span>Async</span>
-            <span>Systems</span>
-          </div>
-          <h3>Background Job Queue</h3>
-          <p>
-            Explored asynchronous task processing for notifications and
-            background work that should not block the main application.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline">
-            <span>E-commerce</span>
-            <span>Prototype</span>
-          </div>
-          <h3>Real-Time Price Tracker</h3>
-          <p>
-            Created a prototype concept for tracking product prices and
-            surfacing useful updates for shoppers.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline">
-            <span>REST API</span>
-            <span>Productivity</span>
-          </div>
-          <h3>Task Tracker</h3>
-          <p>
-            Developed a to-do list application using RESTful API patterns for
-            creating, updating, and organizing tasks.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline">
-            <span>Visualization</span>
-            <span>Final Year</span>
-          </div>
-          <h3>Quadtree Visualizer</h3>
-          <p>
-            Built a visual project around spatial partitioning concepts and
-            interactive understanding of quadtree behavior.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section split-section" id="skills">
-      <div>
-        <p class="section-kicker">Skills</p>
-        <h2>Technical foundation for backend development.</h2>
-        <p>
-          My core strengths are Python programming, logical thinking, debugging,
-          and learning quickly inside project timelines.
-        </p>
-      </div>
-      <div class="skills-wrap" aria-label="Skills list">
-        <span>Python</span>
-        <span>FastAPI</span>
-        <span>SQL</span>
-        <span>RESTful APIs</span>
-        <span>AWS Fundamentals</span>
-        <span>Software Debugging</span>
-        <span>Problem Solving</span>
-        <span>Automation</span>
-        <span>Backend Architecture</span>
-        <span>Teamwork</span>
-        <span>Communication</span>
-        <span>GitHub</span>
-      </div>
-    </section>
-
-    <section class="section timeline-section" id="education">
-      <div class="section-heading">
-        <p class="section-kicker">Education</p>
-        <h2>Engineering education with hands-on project practice.</h2>
-      </div>
-      <div class="timeline">
-        <article>
-          <span class="timeline-date">2023 - 2026</span>
-          <h3>Bachelor of Technology</h3>
-          <p>Computer Science and Engineering, AKTU Lucknow</p>
-        </article>
-        <article>
-          <span class="timeline-date">2020 - 2023</span>
-          <h3>Diploma</h3>
-          <p>Civil Engineering, UPBTE</p>
-        </article>
-        <article>
-          <span class="timeline-date">Experience</span>
-          <h3>College Website Backend Support</h3>
-          <p>
-            Helped maintain college data and website backend security during
-            academic project work.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <div>
-        <p class="section-kicker">Contact</p>
-        <h2>Let's talk about backend engineering opportunities.</h2>
-        <p>
-          Available for entry-level software development roles, internships,
-          and project discussions.
-        </p>
-      </div>
-      <div class="contact-card">
-        <a href="mailto:misbahwork2786@gmail.com">misbahwork2786@gmail.com</a>
-        <a href="tel:+917078391446">+91 70783 91446</a>
-        <span>Okhla, New Delhi</span>
-        <a href="https://github.com/misbah-zee" target="_blank" rel="noopener">github.com/misbah-zee</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 Misbah Ullah. Built with HTML and CSS.</p>
-    <a href="#home">Back to top</a>
+  <footer class="footer" data-aos="fade-up">
+    <p>© 2026 Misbah Z.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
-

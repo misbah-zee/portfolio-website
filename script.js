@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const header = document.querySelector('.site-header');
 const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
@@ -72,3 +73,33 @@ observeActiveSection();
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 window.addEventListener('pointermove', updateGlow, { passive: true });
+=======
+// script.js – initialize AOS and smooth scrolling for navigation links
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize AOS (Animate on Scroll) library
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      // Global settings for AOS animations
+      duration: 800, // animation duration in ms
+      easing: 'ease-out',
+      once: true, // whether animation should happen only once while scrolling down
+      offset: 120, // offset (in px) from the original trigger point
+    });
+  }
+
+  // Smooth scrolling for internal navigation links
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const topOffset = targetEl.offsetTop - 70; // Adjust for sticky header height
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      }
+    });
+  });
+});
+>>>>>>> 4f799d5 (Add premium AOS animations and 3D card hover)
